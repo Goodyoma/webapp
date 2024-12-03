@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hairbrand-app
+  labels:
+     environment: production
+     app: hairbrand-app
+  annotations:
+    discription: "This deployment handles the hairbrand application"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hairbrand-app
+  template:
+    metadata:
+      labels:
+        app: hairbrand-app
+    spec:
+      containers:
+      - name: hairbrand-app
+        image: goodnessmark/hairbrand-app
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always

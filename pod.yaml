@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hairbrand-app
+  labels:
+    app: hairbrand-app  
+spec:
+  containers:
+  - name: hairbrand-app
+    image: goodnessmark/hairbrand-app
+    ports:
+    - containerPort: 80
